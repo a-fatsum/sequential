@@ -1,9 +1,15 @@
 import SelectDeckStyle from "./SelectDeckStyle";
 import Card from "./Card";
-
+import ThreeCardsSet from "./ThreeCardsSet";
+import SampleCards from "./SampleCards";
 //
 
-export default function CardsTable({ setDeckStyle, selectedDeck, imagePath }) {
+export default function CardsTable({
+  setDeckStyle,
+  selectedDeck,
+  imagePath,
+  sampleImageSource,
+}) {
   //
   return (
     <div className="min-h-screen flex items-center justify-center w-screen bg-zinc-900">
@@ -46,6 +52,11 @@ export default function CardsTable({ setDeckStyle, selectedDeck, imagePath }) {
           </div>
         </div>
       </div>
+      {/*  */}
+      <ThreeCardsSet />
+      {/*  */}
+      <SampleCards sampleImageSource={sampleImageSource} />
+      {/*  */}
     </div>
   );
 }

@@ -10,9 +10,14 @@ import { CARD_TYPES } from "./data/cards";
 
 function App() {
   const [deckStyle, setDeckStyle] = useState("classic-1");
-  // const imagePath = `/cards/${deckStyle}/${card.id}.svg`;
 
+  // const imagePath = `/cards/${deckStyle}/${card.id}.svg`;
   const selectedDeck = CARD_TYPES;
+
+  // create your condition here - queen_of_hearts
+  const sampleImageSource = `/cards/${deckStyle}/${card.id}.svg`;
+
+  //
   console.log("deckStyle", deckStyle);
   console.log("♥️♣️♦️♠️", selectedDeck);
 
@@ -23,6 +28,7 @@ function App() {
         deckStyle={deckStyle}
         setDeckStyle={setDeckStyle}
         selectedDeck={selectedDeck}
+        sampleImageSource={sampleImageSource}
       />
     </>
   );
