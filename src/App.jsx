@@ -15,11 +15,12 @@ function App() {
   const selectedDeck = CARD_TYPES;
 
   // create your condition here - queen_of_hearts
-  const sampleImageSource = `/cards/${deckStyle}/${card.id}.svg`;
+  // const sampleImageSource = `/cards/${deckStyle}/${card.id}.svg`;
+  const sampleImageSource = `/cards/${deckStyle}/queen_of_clubs2.svg`;
 
   //
-  console.log("deckStyle", deckStyle);
-  console.log("♥️♣️♦️♠️", selectedDeck);
+  // console.log("deckStyle", deckStyle);
+  // console.log("♥️♣️♦️♠️", selectedDeck);
 
   //
   return (
