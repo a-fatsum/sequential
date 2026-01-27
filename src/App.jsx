@@ -16,7 +16,11 @@ function App() {
 
   // create your condition here - queen_of_hearts
   // const sampleImageSource = `/cards/${deckStyle}/${card.id}.svg`;
-  const sampleImageSource = `/cards/${deckStyle}/queen_of_clubs2.svg`;
+  const sampleImageSourceClassic2 = `/cards/${deckStyle}/queen_of_clubs2.svg`;
+  // const sampleImageSourceClassic1 = `/cards/${deckStyle}/queen_of_clubs.svg`;
+  const sampleImageSourceClassic1 = `/cards/${deckStyle}/queen_of_clubs.svg`;
+
+  // ("public/assets/classic-2/queen_of_diamonds.svg");
 
   //
   // console.log("deckStyle", deckStyle);
@@ -29,7 +33,8 @@ function App() {
         deckStyle={deckStyle}
         setDeckStyle={setDeckStyle}
         selectedDeck={selectedDeck}
-        sampleImageSource={sampleImageSource}
+        sampleImageSourceClassic1={sampleImageSourceClassic1}
+        sampleImageSourceClassic2={sampleImageSourceClassic2}
       />
     </>
   );

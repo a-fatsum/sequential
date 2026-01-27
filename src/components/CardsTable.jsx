@@ -1,62 +1,136 @@
-import SelectDeckStyle from "./SelectDeckStyle";
-import Card from "./Card";
-import ThreeCardsSet from "./ThreeCardsSet";
-import SampleCards from "./SampleCards";
-//
+// import SelectDeckStyle from "./SelectDeckStyle";
+// import Card from "./Card";
+// import ThreeCardsSet from "./ThreeCardsSet";
+// import SampleCards from "./SampleCards";
+// //
 
-export default function CardsTable({
+// export default function CardsTable({
+//   setDeckStyle,
+//   selectedDeck,
+//   imagePath,
+//   sampleImageSourceClassic1,
+// }) {
+//   //
+//   return (
+//     <div className="min-h-screen flex items-center justify-center w-screen bg-zinc-900">
+//       {/* <SelectDeckStyle setDeckStyle={setDeckStyle} /> */}
+//       <SampleCards sampleImageSourceClassic1={sampleImageSourceClassic1} />
+
+//       {/* Table wrapper */}
+//       <div className="relative w-[90vw] max-w-6xl aspect-[16/9] rounded-[999px] p-8 shadow-2xl">
+//         {/* Felt background */}
+//         <div
+//           className="absolute inset-0 rounded-[999px]"
+//           style={{
+//             background:
+//               "radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 40%), repeating-linear-gradient(45deg, #0f3d2e, #0f3d2e 6px, #0d3528 6px, #0d3528 12px)",
+//           }}
+//         />
+
+//         {/* Inner border (table rail) */}
+//         <div className="absolute inset-3 rounded-[999px] border-8 border-amber-900" />
+
+//         {/* Content sits above the background */}
+//       </div>
+//       {/*  */}
+//       <ThreeCardsSet />
+//       {/*  */}
+//       {/*  */}
+//     </div>
+//   );
+// }
+
+// ================================================== //
+
+const CardsTable = ({
   setDeckStyle,
   selectedDeck,
   imagePath,
-  sampleImageSource,
-}) {
-  //
+  sampleImageSourceClassic1,
+}) => {
+  const children = true;
   return (
-    <div className="min-h-screen flex items-center justify-center w-screen bg-zinc-900">
-      <SelectDeckStyle setDeckStyle={setDeckStyle} />
-      {/* Table wrapper */}
-      <div className="relative w-[90vw] max-w-6xl aspect-[16/9] rounded-[999px] p-8 shadow-2xl">
-        {/* Felt background */}
+    <div className=" flex items-center justify-center h-full">
+      {/* Ground shadow (table weight) */}
+      <div className="relative">
         <div
-          className="absolute inset-0 rounded-[999px]"
-          style={{
-            background:
-              "radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 40%), repeating-linear-gradient(45deg, #0f3d2e, #0f3d2e 6px, #0d3528 6px, #0d3528 12px)",
-          }}
+          className="
+            absolute inset-0
+            rounded-[2.75rem]
+            blur-3xl
+            bg-black/70
+            translate-y-8
+            -z-10
+          "
         />
 
-        {/* Inner border (table rail) */}
-        <div className="absolute inset-3 rounded-[999px] border-8 border-amber-900" />
+        {/* Wood rail */}
+        <div
+          className="
+            relative
+            w-[95vw]
+            max-w-[1700px]
+            h-[75vh]
+            rounded-[2.75rem]
+            bg-gradient-to-br
+            from-[#4a2f1c]
+            via-[#6a4427]
+            to-[#2a170d]
+            shadow-[0_22px_45px_rgba(0,0,0,0.6)]
+            p-[14px]
+          "
+        >
+          {/* Subtle rail highlight */}
+          <div
+            className="
+              absolute inset-0
+              rounded-[2.75rem]
+              ring-1 ring-white/10
+              pointer-events-none
+            "
+          />
 
-        {/* Content sits above the background */}
-        <div className="relative z-10 h-full flex flex-col justify-between">
-          {/* Player 2 (top) */}
-          <div className="flex justify-center gap-2">
-            {selectedDeck.map((_, i) => (
-              <Card key={i} imagePath={imagePath} />
-            ))}
-          </div>
+          {/* Felt surface */}
+          <div
+            className="
+              relative
+              w-full h-full
+              rounded-[2.25rem]
+              bg-gradient-to-br
+              from-green-700
+              via-green-800
+              to-green-900
+              shadow-[inset_0_6px_14px_rgba(0,0,0,0.35)]
+              overflow-hidden
+            "
+          >
+            {/* Felt texture */}
+            <div
+              className="
+                absolute inset-0
+                opacity-[0.14]
+                bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.35)_1px,transparent_0)]
+                [background-size:6px_6px]
+              "
+            />
 
-          {/* Center area (future sequences / discard / draw) */}
-          <div className="flex items-center justify-center">
-            <div className="text-white text-xl opacity-70">
-              Center Play Area
-            </div>
-          </div>
+            {/* Edge vignette */}
+            <div
+              className="
+                absolute inset-0
+                rounded-[2.25rem]
+                shadow-[inset_0_0_110px_rgba(0,0,0,0.45)]
+                pointer-events-none
+              "
+            />
 
-          {/* Player 1 (bottom) */}
-          <div className="flex justify-center gap-2">
-            {Array.from({ length: 10 }).map((_, i) => (
-              <Card key={i} imagePath={imagePath} />
-            ))}
+            {/* Content layer */}
+            <div className="relative w-full h-full">{children}</div>
           </div>
         </div>
       </div>
-      {/*  */}
-      <ThreeCardsSet />
-      {/*  */}
-      <SampleCards sampleImageSource={sampleImageSource} />
-      {/*  */}
     </div>
   );
-}
+};
+
+export default CardsTable;
