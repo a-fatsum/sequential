@@ -4,9 +4,9 @@ export default function SelectDeckStyle({ setDeckStyle }) {
   const deckStyles = [
     "classic-1",
     "classic-2",
-    "classic-x",
-    "classic-xx",
-    "classic-xxx",
+    "ornamental",
+    "simple",
+    "white",
   ];
 
   function handleSelect(e) {
@@ -15,8 +15,8 @@ export default function SelectDeckStyle({ setDeckStyle }) {
   //
   return (
     <>
-      <div className="bg-blue-500">
-        <h1>TEST 🍁</h1>
+      <div className="border rounded-sm p-2">
+        <p>Select Deck Style</p>
 
         <select
           onChange={(e) => {

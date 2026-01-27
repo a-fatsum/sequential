@@ -1,52 +1,14 @@
-// import SelectDeckStyle from "./SelectDeckStyle";
-// import Card from "./Card";
-// import ThreeCardsSet from "./ThreeCardsSet";
-// import SampleCards from "./SampleCards";
+import SelectDeckStyle from "./SelectDeckStyle";
+import Card from "./Card";
+import ThreeCardsSet from "./ThreeCardsSet";
+import SampleCards from "./SampleCards";
 // //
-
-// export default function CardsTable({
-//   setDeckStyle,
-//   selectedDeck,
-//   imagePath,
-//   sampleImageSourceClassic1,
-// }) {
-//   //
-//   return (
-//     <div className="min-h-screen flex items-center justify-center w-screen bg-zinc-900">
-//       {/* <SelectDeckStyle setDeckStyle={setDeckStyle} /> */}
-//       <SampleCards sampleImageSourceClassic1={sampleImageSourceClassic1} />
-
-//       {/* Table wrapper */}
-//       <div className="relative w-[90vw] max-w-6xl aspect-[16/9] rounded-[999px] p-8 shadow-2xl">
-//         {/* Felt background */}
-//         <div
-//           className="absolute inset-0 rounded-[999px]"
-//           style={{
-//             background:
-//               "radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 40%), repeating-linear-gradient(45deg, #0f3d2e, #0f3d2e 6px, #0d3528 6px, #0d3528 12px)",
-//           }}
-//         />
-
-//         {/* Inner border (table rail) */}
-//         <div className="absolute inset-3 rounded-[999px] border-8 border-amber-900" />
-
-//         {/* Content sits above the background */}
-//       </div>
-//       {/*  */}
-//       <ThreeCardsSet />
-//       {/*  */}
-//       {/*  */}
-//     </div>
-//   );
-// }
-
-// ================================================== //
-
 const CardsTable = ({
   setDeckStyle,
   selectedDeck,
   imagePath,
   sampleImageSourceClassic1,
+  imageSrc,
 }) => {
   const children = true;
   return (
@@ -124,8 +86,11 @@ const CardsTable = ({
               "
             />
 
-            {/* Content layer */}
-            <div className="relative w-full h-full">{children}</div>
+            {/* Content layer <---------------------------------------------------------------------- */}
+            <div className="relative w-full h-full flex items-center justify-center">
+              <SelectDeckStyle setDeckStyle={setDeckStyle} />
+              <SampleCards imageSrc={imageSrc} />
+            </div>
           </div>
         </div>
       </div>

@@ -1,14 +1,8 @@
-export default function SampleCards({ sampleImageSourceClassic1 }) {
+export default function SampleCards({ imageSrc }) {
   return (
     <>
-      <div className="wrapper h-24 w-18">
-        <img
-          className="h-24 w-18 bg-red-400"
-          src={sampleImageSourceClassic1}
-          alt="Card Image"
-        />
-
-        <img src="public/assets/classic-2/queen_of_diamonds.svg" alt="" />
+      <div className="wrapper">
+        <img className=" h-24" src={imageSrc} alt="Card Image" />
 
         <img src="" alt="" />
       </div>

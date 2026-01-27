@@ -11,15 +11,16 @@ import { CARD_TYPES } from "./data/cards";
 function App() {
   const [deckStyle, setDeckStyle] = useState("classic-1");
 
-  // const imagePath = `/cards/${deckStyle}/${card.id}.svg`;
   const selectedDeck = CARD_TYPES;
 
-  // create your condition here - queen_of_hearts
-  // const sampleImageSource = `/cards/${deckStyle}/${card.id}.svg`;
-  const sampleImageSourceClassic2 = `/cards/${deckStyle}/queen_of_clubs2.svg`;
-  // const sampleImageSourceClassic1 = `/cards/${deckStyle}/queen_of_clubs.svg`;
-  const sampleImageSourceClassic1 = `/cards/${deckStyle}/queen_of_clubs.svg`;
+  const sampleImageSourceClassic2 = `public/cards/${deckStyle}/queen_of_clubs2.svg`;
 
+  const imageSrc = `assets/${deckStyle}/queen_of_diamonds.svg`;
+
+  const sampleImageSourceClassic1 = `public/assets/classic-2/queen_of_diamonds.svg`;
+
+  console.log("deck style -> ", deckStyle);
+  console.log("sampleImageSourceClassic1 ", sampleImageSourceClassic1);
   // ("public/assets/classic-2/queen_of_diamonds.svg");
 
   //
@@ -33,6 +34,7 @@ function App() {
         deckStyle={deckStyle}
         setDeckStyle={setDeckStyle}
         selectedDeck={selectedDeck}
+        imageSrc={imageSrc}
         sampleImageSourceClassic1={sampleImageSourceClassic1}
         sampleImageSourceClassic2={sampleImageSourceClassic2}
       />
