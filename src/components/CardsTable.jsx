@@ -32,7 +32,7 @@ const CardsTable = ({
             relative
             w-[95vw]
             max-w-[1700px]
-            h-[75vh]
+            h-[90vh]
             rounded-[2.75rem]
             bg-gradient-to-br
             from-[#4a2f1c]
@@ -87,9 +87,11 @@ const CardsTable = ({
             />
 
             {/* Content layer <---------------------------------------------------------------------- */}
-            <div className="relative w-full h-full flex items-center justify-center">
-              <SelectDeckStyle setDeckStyle={setDeckStyle} />
-              <SampleCards imageSrc={imageSrc} />
+            <div className="relative w-full h-full flex flex-col items-start justify-start ">
+              <div className=" p-4 bg-white/10 backdrop-blur-md border border-white/20 shadow-lg flex gap-8 m-4 rounded-xl">
+                <SelectDeckStyle setDeckStyle={setDeckStyle} />
+                <SampleCards imageSrc={imageSrc} />
+              </div>
             </div>
           </div>
         </div>

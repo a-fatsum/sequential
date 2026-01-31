@@ -15,8 +15,8 @@ export default function SelectDeckStyle({ setDeckStyle }) {
   //
   return (
     <>
-      <div className="border rounded-sm p-2">
-        <p>Select Deck Style</p>
+      <div className="border text-sm rounded-sm p-2">
+        <p className="  font-bold">Select Deck Style</p>
 
         <select
           onChange={(e) => {
