@@ -1,6 +1,7 @@
 // cards.js
 // This file defines all possible card TYPES in the game
 
+//
 const suits = ["clubs", "diamonds", "hearts", "spades"];
 const ranks = [
   { value: 2, label: "2" },
@@ -18,10 +19,11 @@ const ranks = [
   { value: 14, label: "Ace" },
 ];
 
-export const CARD_TYPES = suits.flatMap((suit) =>
+export const allCardsObj = suits.flatMap((suit) =>
   ranks.map((rank) => ({
     id: `${rank.label}_of_${suit}`,
     rank: rank.value,
+    ImageSrc: `assets/classic-1/${rank.label.toLowerCase()}_of_${suit}.svg`,
     suit,
   })),
 );

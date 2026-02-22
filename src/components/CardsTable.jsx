@@ -3,13 +3,7 @@ import Card from "./Card";
 import HandOfCards from "./HandOfCards";
 import SampleCards from "./SampleCards";
 // //
-const CardsTable = ({
-  setDeckStyle,
-  selectedDeck,
-  imagePath,
-  sampleImageSourceClassic1,
-  imageSrc,
-}) => {
+const CardsTable = ({ setDeckStyle, imageSrc }) => {
   const children = true;
   return (
     <div className=" flex items-center justify-center h-full">
