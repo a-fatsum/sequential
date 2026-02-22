@@ -10,22 +10,49 @@ import { CARD_TYPES } from "./data/cards";
 
 function App() {
   const [deckStyle, setDeckStyle] = useState("classic-1");
-
   const selectedDeck = CARD_TYPES;
-
   const sampleImageSourceClassic2 = `public/cards/${deckStyle}/queen_of_clubs2.svg`;
-
   const imageSrc = `assets/${deckStyle}/queen_of_diamonds.svg`;
-
   const sampleImageSourceClassic1 = `public/assets/classic-2/queen_of_diamonds.svg`;
-
-  console.log("deck style -> ", deckStyle);
-  console.log("sampleImageSourceClassic1 ", sampleImageSourceClassic1);
-  // ("public/assets/classic-2/queen_of_diamonds.svg");
-
   //
-  // console.log("deckStyle", deckStyle);
-  // console.log("♥️♣️♦️♠️", selectedDeck);
+
+  // Handle cards shuffle
+  function shuffleDeck(deck) {
+    const cardsDeck = deck.flat();
+    const shuffledDeck = [];
+
+    for (let i = 0; i < cardsDeck.length; ) {
+      const randNum = Math.floor(Math.random() * cardsDeck.length);
+      const card = cardsDeck[randNum];
+      if (!shuffledDeck.includes(card)) {
+        shuffledDeck.push(card);
+        i++;
+      }
+    }
+    return shuffledDeck;
+  }
+
+  // Handle dealing cards
+  function dealCards(deck) {
+    const fourCards1 = [];
+    const fourCards2 = [];
+    const threeCards = [];
+    //
+    for (let i = 0; i < deck.length; i++) {
+      if (!fourCards1.includes(deck[i]) && fourCards1.length < 4) {
+        fourCards1.push(deck[i]);
+      }
+      if (!fourCards2.includes(deck[i]) && fourCards2.length < 4) {
+        i++;
+        fourCards2.push(deck[i]);
+      }
+      if (!threeCards.includes(deck[i]) && threeCards.length < 3) {
+        i++;
+        threeCards.push(deck[i]);
+      }
+    }
+    return [fourCards1, fourCards2, threeCards];
+  }
 
   //
   return (

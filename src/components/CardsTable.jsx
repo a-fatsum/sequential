@@ -1,6 +1,6 @@
 import SelectDeckStyle from "./SelectDeckStyle";
 import Card from "./Card";
-import ThreeCardsSet from "./ThreeCardsSet";
+import HandOfCards from "./HandOfCards";
 import SampleCards from "./SampleCards";
 // //
 const CardsTable = ({
@@ -87,10 +87,14 @@ const CardsTable = ({
             />
 
             {/* Content layer <---------------------------------------------------------------------- */}
-            <div className="relative w-full h-full flex flex-col items-start justify-start ">
+            <div className="relative w-full h-full flex flex-col items-start justify-start">
               <div className=" p-4 bg-white/10 backdrop-blur-md border border-white/20 shadow-lg flex gap-8 m-4 rounded-xl">
                 <SelectDeckStyle setDeckStyle={setDeckStyle} />
                 <SampleCards imageSrc={imageSrc} />
+              </div>
+              {/* Three cards */}
+              <div>
+                <HandOfCards imageSource={imageSrc} />
               </div>
             </div>
           </div>
