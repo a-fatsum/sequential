@@ -15,16 +15,14 @@ function App() {
 
   //
 
-  console.log("✅ ", allCardsObj[0].ImageSrc);
+  // console.log("✅ ", allCardsObj[0]);
 
   // Handle cards shuffle
-  function shuffleDeck(deck) {
-    const cardsDeck = deck.flat();
+  function shuffleTheDeck(deck) {
     const shuffledDeck = [];
-
-    for (let i = 0; i < cardsDeck.length; ) {
-      const randNum = Math.floor(Math.random() * cardsDeck.length);
-      const card = cardsDeck[randNum];
+    for (let i = 0; i < deck.length; ) {
+      const randNum = Math.floor(Math.random() * deck.length);
+      const card = deck[randNum];
       if (!shuffledDeck.includes(card)) {
         shuffledDeck.push(card);
         i++;
@@ -33,8 +31,11 @@ function App() {
     return shuffledDeck;
   }
 
+  const shuffledDeck = shuffleTheDeck(allCardsObj);
+  console.log("shuffledDecck", shuffledDeck);
+
   // Handle dealing cards
-  function dealCards(deck) {
+  function dealTheCards(deck) {
     const fourCards1 = [];
     const fourCards2 = [];
     const threeCards = [];
@@ -54,6 +55,10 @@ function App() {
     }
     return [fourCards1, fourCards2, threeCards];
   }
+  //
+
+  const hand = dealTheCards(shuffledDeck);
+  console.log("😂 ", hand);
 
   //
   return (
@@ -62,6 +67,7 @@ function App() {
         deckStyle={deckStyle}
         setDeckStyle={setDeckStyle}
         imageSrc={imageSrc}
+        hand={hand}
       />
     </>
   );

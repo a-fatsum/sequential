@@ -2,8 +2,10 @@ import SelectDeckStyle from "./SelectDeckStyle";
 import Card from "./Card";
 import HandOfCards from "./HandOfCards";
 import SampleCards from "./SampleCards";
+// import Buttons from "./components/Buttons";
+
 // //
-const CardsTable = ({ setDeckStyle, imageSrc }) => {
+const CardsTable = ({ setDeckStyle, imageSrc, hand }) => {
   const children = true;
   return (
     <div className=" flex items-center justify-center h-full">
@@ -88,8 +90,9 @@ const CardsTable = ({ setDeckStyle, imageSrc }) => {
               </div>
               {/* Three cards */}
               <div>
-                <HandOfCards imageSource={imageSrc} />
+                <HandOfCards imageSource={imageSrc} hand={hand} />
               </div>
+              {/* Buttons */}
             </div>
           </div>
         </div>

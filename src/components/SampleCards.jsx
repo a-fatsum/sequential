@@ -4,7 +4,7 @@ export default function SampleCards({ imageSrc }) {
       <div className="wrapper">
         <img className=" h-24" src={imageSrc} alt="Card Image" />
 
-        <img src="" alt="" />
+        <img src="xx" alt="" />
       </div>
     </>
   );

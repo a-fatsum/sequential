@@ -26,7 +26,9 @@ export default function SelectDeckStyle({ setDeckStyle }) {
           id=""
         >
           {deckStyles.map((style) => (
-            <option value={style}> {`${style}`}</option>
+            <option key={style} value={style}>
+              {`${style}`}
+            </option>
           ))}
         </select>
       </div>
