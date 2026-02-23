@@ -6,18 +6,18 @@ import { allCardsObj } from "./data/cards";
 // -- Create a state to store the decks style and render a card just anywhere for now.
 //    | -- rename/reformat data
 
-// == To do TASKs <<------------------------     - - - - - - - - - - - - - -- - - - -  - -- To do TASKs -- - - - - -
+// == To do TASKs <<------------------------     - - - - - - - - - - - - - - - - - - -  - -- To do TASKs -- - - - - -
 
 function App() {
   const [deckStyle, setDeckStyle] = useState("classic-1");
   const imageSrc = `assets/${deckStyle}/queen_of_diamonds.svg`;
+  const [hand, setHand] = useState([]);
+  const [shuffledDeck, setShuffledDeck] = useState([]);
+
   // const imageSrc = allCardsObj[7].ImageSrc;
-
-  //
-
   // console.log("✅ ", allCardsObj[0]);
 
-  // Handle cards shuffle
+  // Handle shuffling the cards
   function shuffleTheDeck(deck) {
     const shuffledDeck = [];
     for (let i = 0; i < deck.length; ) {
@@ -31,8 +31,8 @@ function App() {
     return shuffledDeck;
   }
 
-  const shuffledDeck = shuffleTheDeck(allCardsObj);
-  console.log("shuffledDecck", shuffledDeck);
+  // const shuffledDeck_xx = shuffleTheDeck(allCardsObj);
+  // console.log("shuffledDecck", shuffledDeck_x);
 
   // Handle dealing cards
   function dealTheCards(deck) {
@@ -57,8 +57,8 @@ function App() {
   }
   //
 
-  const hand = dealTheCards(shuffledDeck);
-  console.log("😂 ", hand);
+  // const hand_xxx = dealTheCards(shuffledDeck);
+  // console.log("😂 ", hand_xxx);
 
   //
   return (
@@ -68,6 +68,12 @@ function App() {
         setDeckStyle={setDeckStyle}
         imageSrc={imageSrc}
         hand={hand}
+        setHand={setHand}
+        // shuffleTheDeck={shuffleTheDeck}
+        dealTheCards={dealTheCards}
+        allCardsObj={allCardsObj}
+        shuffledDeck={shuffledDeck}
+        setShuffledDeck={setShuffledDeck}
       />
     </>
   );

@@ -2,10 +2,20 @@ import SelectDeckStyle from "./SelectDeckStyle";
 import Card from "./Card";
 import HandOfCards from "./HandOfCards";
 import SampleCards from "./SampleCards";
-// import Buttons from "./components/Buttons";
+import Buttons from "./Buttons";
 
 // //
-const CardsTable = ({ setDeckStyle, imageSrc, hand }) => {
+const CardsTable = ({
+  setDeckStyle,
+  imageSrc,
+  hand,
+  setHand,
+  allCardsObj,
+  dealTheCards,
+  shuffleTheDeck,
+  setShuffledDeck,
+  shuffledDeck,
+}) => {
   const children = true;
   return (
     <div className=" flex items-center justify-center h-full">
@@ -93,6 +103,15 @@ const CardsTable = ({ setDeckStyle, imageSrc, hand }) => {
                 <HandOfCards imageSource={imageSrc} hand={hand} />
               </div>
               {/* Buttons */}
+              <div className="mt-4">
+                <Buttons
+                  setHand={setHand}
+                  // shuffleTheDeck={shuffleTheDeck}
+                  dealTheCards={dealTheCards}
+                  allCardsObj={allCardsObj}
+                  setShuffledDeck={setShuffledDeck}
+                />
+              </div>
             </div>
           </div>
         </div>

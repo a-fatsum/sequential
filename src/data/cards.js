@@ -1,7 +1,3 @@
-// cards.js
-// This file defines all possible card TYPES in the game
-
-//
 const suits = ["clubs", "diamonds", "hearts", "spades"];
 const ranks = [
   { value: 2, label: "2" },
